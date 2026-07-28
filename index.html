@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FANNY SPORTS TOURNAMENT (FST) | Gulshan's Elite Showdown</title>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&family=Inter:wght@300;400;500;600;700;850&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        matte: '#0B0B0B',
+                        darkgray: '#121212',
+                        cardgray: '#171717',
+                        lightgray: '#EAEAEA',
+                    },
+                    fontFamily: {
+                        anton: ['"Anton"', 'sans-serif'],
+                        bebas: ['"Bebas Neue"', 'sans-serif'],
+                        inter: ['"Inter"', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            background-color: #0B0B0B;
+            color: #FFFFFF;
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
+        }
+        .font-heading {
+            font-family: 'Bebas Neue', sans-serif;
+            letter-spacing: 0.05em;
+        }
+        .font-title {
+            font-family: 'Anton', sans-serif;
+            letter-spacing: 0.03em;
+        }
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0B0B0B;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #222222;
+            border-radius: 4px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #ffffff;
+        }
+        .glass {
+            background: rgba(18, 18, 18, 0.8);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .glass-card {
+            background: linear-gradient(135deg, rgba(23,23,23,0.9) 0%, rgba(11,11,11,0.9) 100%);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .glass-card:hover {
+            border-color: rgba(255, 255, 255, 0.3);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px -10px rgba(255, 255, 255, 0.1);
+        }
+        #cursor-glow {
+            pointer-events: none;
+            position: fixed;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.04) 0%, rgba(0,0,0,0) 70%);
+            border-radius: 50%;
+            z-index: 99;
+            transform: translate(-50%, -50%);
+            transition: width 0.3s, height 0.3s;
+        }
+        .hero-bg {
+            background: linear-gradient(to bottom, rgba(11,11,11,0.5), rgba(11,11,11,0.98)), 
+                        url('https://images.unsplash.com/photo-1508098682722-e99c43a406b2?q=80&w=1920&auto=format&fit=crop') no-repeat center center/cover;
+        }
+    </style>
+</head>
+<body class="bg-matte text-white">
+
+    <!-- Mouse Follow Glow -->
+    <div id="cursor-glow"></div>
+
+    <!-- Scroll Progress Indicator -->
+    <div id="scroll-progress" class="fixed top-0 left-0 h-1 bg-white z-50 transition-all duration-100" style="width: 0%;"></div>
+
+    <!-- Loader featuring Official Logo -->
+    <div id="loader" class="fixed inset-0 z-50 bg-matte flex flex-col items-center justify-center transition-opacity duration-700">
+        <div class="w-36 rounded-xl overflow-hidden border border-white/20 bg-black p-2 mb-6 shadow-2xl animate-pulse">
+            <img src="https://images.unsplash.com/photo-1518091043644-c1d4457512c6?q=80&w=400&auto=format&fit=crop" alt="FST Official Logo" class="w-full h-auto object-cover rounded filter contrast-125">
+        </div>
+        <h2 class="font-heading text-2xl tracking-widest text-white">FANNY SPORTS TOURNAMENT</h2>
+        <p class="text-[10px] text-gray-400 mt-2 tracking-widest uppercase">Loading Official Experience...</p>
+    </div>
+
+    <!-- Sticky Navbar -->
+    <nav id="navbar" class="fixed top-0 left-0 right-0 z-40 transition-all duration-300 px-6 lg:px-12 py-3 flex items-center justify-between glass border-b border-white/5">
+        <a href="#" class="flex items-center gap-3 group">
+            <div class="w-12 h-10 rounded-lg overflow-hidden border border-white/20 bg-black flex items-center justify-center group-hover:scale-105 transition-transform shadow-md">
+                <img src="https://images.unsplash.com/photo-1518091043644-c1d4457512c6?q=80&w=300&auto=format&fit=crop" alt="FST Official Logo" class="w-full h-full object-cover filter contrast-125">
+            </div>
+            <span class="font-heading text-lg tracking-wider hidden sm:inline">FANNY SPORTS</span>
+        </a>
+
+        <div class="hidden lg:flex items-center gap-8 text-sm font-medium text-gray-300">
+            <a href="#about" class="hover:text-white transition-colors">About</a>
+            <a href="#tournament" class="hover:text-white transition-colors">Tournament</a>
+            <a href="#schedule" class="hover:text-white transition-colors">Schedule</a>
+            <a href="#venue" class="hover:text-white transition-colors">Venue</a>
+            <a href="#gallery" class="hover:text-white transition-colors">Gallery</a>
+            <a href="#faq" class="hover:text-white transition-colors">FAQ</a>
+            <a href="#contact" class="hover:text-white transition-colors">Contact</a>
+        </div>
+
+        <div class="flex items-center gap-4">
+            <button id="menu-btn" class="lg:hidden text-2xl text-white focus:outline-none">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu Overlay -->
+    <div id="mobile-menu" class="fixed inset-0 z-30 bg-matte/95 backdrop-blur-xl flex flex-col items-center justify-center gap-6 text-xl font-heading tracking-wider opacity-0 pointer-events-none transition-opacity duration-300 lg:hidden">
+        <a href="#about" class="mobile-link hover:text-white">About</a>
+        <a href="#tournament" class="mobile-link hover:text-white">Tournament</a>
+        <a href="#schedule" class="mobile-link hover:text-white">Schedule</a>
+        <a href="#venue" class="mobile-link hover:text-white">Venue</a>
+        <a href="#gallery" class="mobile-link hover:text-white">Gallery</a>
+        <a href="#faq" class="mobile-link hover:text-white">FAQ</a>
+        <a href="#contact" class="mobile-link hover:text-white">Contact</a>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="relative min-h-screen flex items-center justify-center hero-bg px-6 pt-24 overflow-hidden">
+        <div class="absolute top-1/4 left-10 w-72 h-72 bg-white/5 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="absolute bottom-10 right-10 w-96 h-96 bg-white/5 rounded-full blur-3xl pointer-events-none"></div>
+
+        <div class="relative z-10 max-w-5xl mx-auto text-center flex flex-col items-center mt-6">
+            
+            <!-- OFFICIAL LOGO ARTWORK -->
+            <div class="relative mb-6 group max-w-lg w-full px-4">
+                <div class="absolute -inset-4 bg-white/10 rounded-3xl blur-2xl opacity-40"></div>
+                <div class="relative rounded-2xl overflow-hidden glass border border-white/30 p-2 shadow-[0_0_60px_rgba(255,255,255,0.2)] bg-black">
+                    <img src="https://images.unsplash.com/photo-1518091043644-c1d4457512c6?q=80&w=1200&auto=format&fit=crop" alt="FST Official Logo Art" class="w-full h-auto object-cover rounded-xl filter contrast-125 brightness-95">
+                    <div class="absolute inset-0 flex items-end justify-center p-4 bg-gradient-to-t from-black via-transparent to-transparent">
+                        <span class="text-[10px] uppercase tracking-[0.4em] text-gray-300 font-bold bg-black/60 px-4 py-1 rounded-full border border-white/10">Official Event Identity</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full glass border border-white/20 text-white text-xs font-semibold tracking-widest uppercase mb-4 animate-pulse">
+                <i class="fa-solid fa-circle text-[8px]"></i> Gulshan's Elite Showdown
+            </div>
+
+            <h1 class="font-title text-4xl sm:text-6xl lg:text-7xl tracking-tight leading-none mb-3 text-white uppercase drop-shadow-xl">
+                FANNY SPORTS TOURNAMENT
+            </h1>
+
+            <p class="text-xl sm:text-3xl text-gray-300 font-light tracking-wide mb-6 font-heading">
+                Karachi's Premier 6v6 Football Tournament
+            </p>
+
+            <div class="flex flex-wrap items-center justify-center gap-4 sm:gap-8 text-sm sm:text-base text-gray-300 glass px-6 py-3 rounded-2xl mb-10 border border-white/10">
+                <div class="flex items-center gap-2"><i class="fa-regular fa-calendar text-white"></i> 11–13 August 2026</div>
+                <div class="hidden sm:inline text-white/20">|</div>
+                <div class="flex items-center gap-2"><i class="fa-regular fa-clock text-white"></i> 7:00 PM – 12:00 AM</div>
+                <div class="hidden sm:inline text-white/20">|</div>
+                <div class="flex items-center gap-2"><i class="fa-solid fa-location-dot text-white"></i> Karachi</div>
+            </div>
+
+            <!-- Live Countdown Timer -->
+            <div class="mt-10 grid grid-cols-4 gap-3 sm:gap-6 w-full max-w-xl">
+                <div class="glass p-3 sm:p-4 rounded-2xl text-center">
+                    <span id="days" class="font-heading text-3xl sm:text-5xl text-white block">00</span>
+                    <span class="text-[10px] sm:text-xs text-gray-400 uppercase tracking-widest">Days</span>
+                </div>
+                <div class="glass p-3 sm:p-4 rounded-2xl text-center">
+                    <span id="hours" class="font-heading text-3xl sm:text-5xl text-white block">00</span>
+                    <span class="text-[10px] sm:text-xs text-gray-400 uppercase tracking-widest">Hours</span>
+                </div>
+                <div class="glass p-3 sm:p-4 rounded-2xl text-center">
+                    <span id="minutes" class="font-heading text-3xl sm:text-5xl text-white block">00</span>
+                    <span class="text-[10px] sm:text-xs text-gray-400 uppercase tracking-widest">Mins</span>
+                </div>
+                <div class="glass p-3 sm:p-4 rounded-2xl text-center">
+                    <span id="seconds" class="font-heading text-3xl sm:text-5xl text-white block">00</span>
+                    <span class="text-[10px] sm:text-xs text-gray-400 uppercase tracking-widest">Secs</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-24 px-6 lg:px-12 max-w-7xl mx-auto">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div class="relative group">
+                <div class="absolute -inset-2 bg-white/10 rounded-3xl blur opacity-25 group-hover:opacity-50 transition duration-500"></div>
+                <div class="relative rounded-3xl overflow-hidden glass h-[400px] sm:h-[450px]">
+                    <img src="https://images.unsplash.com/photo-1574629810360-7efbbe195018?q=80&w=1000&auto=format&fit=crop" alt="Football Action" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 grayscale contrast-125">
+                </div>
+            </div>
+            <div>
+                <span class="text-gray-400 text-xs font-bold tracking-widest uppercase block mb-3">The Experience</span>
+                <h2 class="font-title text-4xl sm:text-6xl uppercase tracking-wider mb-6">
+                    Where Karachi's Passion Meets <span class="text-white">Elite Competition</span>
+                </h2>
+                <p class="text-gray-300 text-base sm:text-lg leading-relaxed mb-6">
+                    Fanny Sports Tournament (FST) is a three-day competitive 6v6 football tournament that brings together passionate footballers from across Karachi. Built with the vision of creating an elite yet accessible football experience, FST combines competitive sport, professional event management, and community spirit. Whether you're stepping onto the pitch or cheering from the sidelines, FST is designed to celebrate the city's love for football.
+                </p>
+                <div class="grid grid-cols-2 gap-6">
+                    <div class="glass p-4 rounded-xl">
+                        <span class="font-heading text-3xl text-white block">130+</span>
+                        <span class="text-xs text-gray-400 uppercase tracking-widest">Expected Participants</span>
+                    </div>
+                    <div class="glass p-4 rounded-xl">
+                        <span class="font-heading text-3xl text-white block">Pro Level</span>
+                        <span class="text-xs text-gray-400 uppercase tracking-widest">Operations & Safety</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Statistics Section -->
+    <section class="py-16 bg-darkgray/50 border-y border-white/5">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12 grid grid-cols-2 md:grid-cols-5 gap-8 text-center">
+            <div class="glass p-6 rounded-2xl">
+                <span class="font-heading text-5xl sm:text-6xl text-white block mb-2 counter" data-target="130">0</span>
+                <span class="text-xs text-gray-400 uppercase tracking-widest font-semibold">Participants</span>
+            </div>
+            <div class="glass p-6 rounded-2xl">
+                <span class="font-heading text-5xl sm:text-6xl text-white block mb-2 counter" data-target="16">0</span>
+                <span class="text-xs text-gray-400 uppercase tracking-widest font-semibold">Teams</span>
+            </div>
+            <div class="glass p-6 rounded-2xl">
+                <span class="font-heading text-5xl sm:text-6xl text-white block mb-2 counter" data-target="3">0</span>
+                <span class="text-xs text-gray-400 uppercase tracking-widest font-semibold">Days</span>
+            </div>
+            <div class="glass p-6 rounded-2xl">
+                <span class="font-heading text-5xl sm:text-6xl text-white block mb-2 counter" data-target="32">0</span>
+                <span class="text-xs text-gray-400 uppercase tracking-widest font-semibold">Matches+</span>
+            </div>
+            <div class="glass p-6 rounded-2xl col-span-2 md:col-span-1">
+                <span class="font-heading text-5xl sm:text-6xl text-white block mb-2 counter" data-target="1">0</span>
+                <span class="text-xs text-gray-400 uppercase tracking-widest font-semibold">Champion</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tournament Format Section -->
+    <section id="tournament" class="py-24 px-6 lg:px-12 max-w-7xl mx-auto">
+        <div class="text-center max-w-3xl mx-auto mb-16">
+            <span class="text-gray-400 text-xs font-bold tracking-widest uppercase block mb-3">Structure</span>
+            <h2 class="font-title text-4xl sm:text-6xl uppercase tracking-wider mb-4">TOURNAMENT FORMAT</h2>
+            <p class="text-gray-400">Interactive knockout roadmap leading to the ultimate grand finale.</p>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-4">
+            <div class="glass-card p-6 rounded-2xl text-center">
+                <div class="w-12 h-12 rounded-xl bg-white/15 text-white flex items-center justify-center mx-auto mb-4 font-heading text-xl">01</div>
+                <h3 class="font-heading text-xl mb-2 text-white">16 Teams</h3>
+                <p class="text-xs text-gray-400">Elite 6v6 squads assembled from across Karachi.</p>
+            </div>
+            <div class="glass-card p-6 rounded-2xl text-center">
+                <div class="w-12 h-12 rounded-xl bg-white/15 text-white flex items-center justify-center mx-auto mb-4 font-heading text-xl">02</div>
+                <h3 class="font-heading text-xl mb-2 text-white">4 Groups</h3>
+                <p class="text-xs text-gray-400">Balanced groups for fierce competition.</p>
+            </div>
+            <div class="glass-card p-6 rounded-2xl text-center">
+                <div class="w-12 h-12 rounded-xl bg-white/15 text-white flex items-center justify-center mx-auto mb-4 font-heading text-xl">03</div>
+                <h3 class="font-heading text-xl mb-2 text-white">Round Robin</h3>
+                <p class="text-xs text-gray-400">Intense group stage encounters.</p>
+            </div>
+            <div class="glass-card p-6 rounded-2xl text-center">
+                <div class="w-12 h-12 rounded-xl bg-white/15 text-white flex items-center justify-center mx-auto mb-4 font-heading text-xl">04</div>
+                <h3 class="font-heading text-xl mb-2 text-white">Quarter Finals</h3>
+                <p class="text-xs text-gray-400">The knockout stage heats up.</p>
+            </div>
+            <div class="glass-card p-6 rounded-2xl text-center">
+                <div class="w-12 h-12 rounded-xl bg-white/15 text-white flex items-center justify-center mx-auto mb-4 font-heading text-xl">05</div>
+                <h3 class="font-heading text-xl mb-2 text-white">Semi Finals</h3>
+                <p class="text-xs text-gray-400">The final four battle for supremacy.</p>
+            </div>
+            <div class="glass-card p-6 rounded-2xl text-center border-white/40">
+                <div class="w-12 h-12 rounded-xl bg-white text-matte flex items-center justify-center mx-auto mb-4 font-heading text-xl">06</div>
+                <h3 class="font-heading text-xl mb-2 text-white">Final</h3>
+                <p class="text-xs text-gray-400">One champion takes the crown.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Schedule / Timeline Section -->
+    <section id="schedule" class="py-24 px-6 lg:px-12 max-w-5xl mx-auto">
+        <div class="text-center max-w-3xl mx-auto mb-16">
+            <span class="text-gray-400 text-xs font-bold tracking-widest uppercase block mb-3">Blueprint</span>
+            <h2 class="font-title text-4xl sm:text-6xl uppercase tracking-wider mb-4">EVENT SCHEDULE</h2>
+            <p class="text-gray-400">Three days of intense football action under the floodlights.</p>
+        </div>
+
+        <div class="space-y-8">
+            <div class="glass p-6 sm:p-8 rounded-3xl border-l-4 border-white">
+                <div class="flex flex-col sm:flex-row sm:items-center justify-between mb-6">
+                    <h3 class="font-heading text-3xl text-white">DAY 1</h3>
+                    <span class="text-sm font-semibold text-gray-400">11 August 2026</span>
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                    <div class="glass p-4 rounded-xl">
+                        <span class="text-xs text-white font-bold uppercase block mb-1">6:00 PM</span>
+                        <h4 class="font-semibold text-gray-200">Check-in & Verification</h4>
+                    </div>
+                    <div class="glass p-4 rounded-xl">
+                        <span class="text-xs text-white font-bold uppercase block mb-1">7:00 PM</span>
+                        <h4 class="font-semibold text-gray-200">Tournament Briefing & Rules</h4>
+                    </div>
+                    <div class="glass p-4 rounded-xl">
+                        <span class="text-xs text-white font-bold uppercase block mb-1">7:15 PM ONWARDS</span>
+                        <h4 class="font-semibold text-gray-200">Group Stage Round 1</h4>
+                    </div>
+                </div>
+            </div>
+
+            <div class="glass p-6 sm:p-8 rounded-3xl border-l-4 border-white">
+                <div class="flex flex-col sm:flex-row sm:items-center justify-between mb-6">
+                    <h3 class="font-heading text-3xl text-white">DAY 2</h3>
+                    <span class="text-sm font-semibold text-gray-400">12 August 2026</span>
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div class="glass p-4 rounded-xl">
+                        <span class="text-xs text-white font-bold uppercase block mb-1">7:00 PM</span>
+                        <h4 class="font-semibold text-gray-200">Group Stage Round 2</h4>
+                    </div>
+                    <div class="glass p-4 rounded-xl">
+                        <span class="text-xs text-white font-bold uppercase block mb-1">Following Matches</span>
+                        <h4 class="font-semibold text-gray-200">Group Stage Conclusion & Deciders</h4>
+                    </div>
+                </div>
+            </div>
+
+            <div class="glass p-6 sm:p-8 rounded-3xl border-l-4 border-white">
+                <div class="flex flex-col sm:flex-row sm:items-center justify-between mb-6">
+                    <h3 class="font-heading text-3xl text-white">DAY 3</h3>
+                    <span class="text-sm font-semibold text-gray-400">13 August 2026</span>
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                    <div class="glass p-4 rounded-xl">
+                        <span class="text-xs text-white font-bold uppercase block mb-1">7:00 PM</span>
+                        <h4 class="font-semibold text-gray-200">Quarter Finals</h4>
+                    </div>
+                    <div class="glass p-4 rounded-xl">
+                        <span class="text-xs text-white font-bold uppercase block mb-1">8:30 PM</span>
+                        <h4 class="font-semibold text-gray-200">Semi Finals</h4>
+                    </div>
+                    <div class="glass p-4 rounded-xl border border-white/40">
+                        <span class="text-xs text-white font-bold uppercase block mb-1">09:20 PM</span>
+                        <h4 class="font-semibold text-white">Grand Final & Closing</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Venue Section -->
+    <section id="venue" class="py-24 px-6 lg:px-12 max-w-7xl mx-auto">
+        <div class="text-center max-w-3xl mx-auto mb-16">
+            <span class="text-gray-400 text-xs font-bold tracking-widest uppercase block mb-3">Location</span>
+            <h2 class="font-title text-4xl sm:text-6xl uppercase tracking-wider mb-4">W466+Q66, BLOCK 10A GULSHAN-E-IQBAL, KARACHI</h2>
+            <p class="text-gray-400">Official tournament destination grounds.</p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div>
+                <p class="text-gray-300 mb-8 leading-relaxed text-lg">
+                    Located in the heart of Gulshan-e-Iqbal (W466+Q66, Block 10A), our venue features high-grade artificial turf, professional floodlighting, spectator viewing areas, and secure team facilities.
+                </p>
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                    <div class="glass p-5 rounded-2xl text-center">
+                        <div class="w-10 h-10 rounded-xl bg-white/10 text-white flex items-center justify-center mx-auto mb-3">
+                            <i class="fa-solid fa-medal"></i>
+                        </div>
+                        <h4 class="font-semibold text-white text-sm">Premium Turf</h4>
+                    </div>
+                    <div class="glass p-5 rounded-2xl text-center">
+                        <div class="w-10 h-10 rounded-xl bg-white/10 text-white flex items-center justify-center mx-auto mb-3">
+                            <i class="fa-solid fa-map-pin"></i>
+                        </div>
+                        <h4 class="font-semibold text-white text-sm">Prime Location</h4>
+                    </div>
+                    <div class="glass p-5 rounded-2xl text-center">
+                        <div class="w-10 h-10 rounded-xl bg-white/10 text-white flex items-center justify-center mx-auto mb-3">
+                            <i class="fa-solid fa-users"></i>
+                        </div>
+                        <h4 class="font-semibold text-white text-sm">Family-Friendly</h4>
+                    </div>
+                </div>
+            </div>
+            <div class="h-[450px] rounded-3xl overflow-hidden glass border border-white/10 relative">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3618.397148569429!2d67.0822!3d24.9056!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3eb33f4144444445%3A0x0!2zMjTCsDU0JzIwLjIiTiA2N8KwMDUnNTUuOSJF!5e0!3m2!1sen!2spk!4v1620000000000!5m2!1sen!2spk" width="100%" height="100%" style="border:0; filter: grayscale(1) invert(1) contrast(1.2);" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose FST Section -->
+    <section class="py-24 bg-darkgray/40 border-y border-white/5">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-gray-400 text-xs font-bold tracking-widest uppercase block mb-3">Excellence</span>
+                <h2 class="font-title text-4xl sm:text-6xl uppercase tracking-wider mb-4">WHY CHOOSE FST?</h2>
+                <p class="text-gray-400">Setting new benchmarks in sports event execution.</p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="glass p-8 rounded-3xl">
+                    <div class="w-14 h-14 rounded-2xl bg-white/10 text-white flex items-center justify-center text-2xl mb-6">
+                        <i class="fa-solid fa-briefcase"></i>
+                    </div>
+                    <h3 class="font-heading text-2xl mb-3 text-white">Professional Management</h3>
+                    <p class="text-sm text-gray-400 leading-relaxed">Executed by seasoned tournament directors ensuring seamless schedules and fair play.</p>
+                </div>
+                <div class="glass p-8 rounded-3xl">
+                    <div class="w-14 h-14 rounded-2xl bg-white/10 text-white flex items-center justify-center text-2xl mb-6">
+                        <i class="fa-solid fa-shield-halved"></i>
+                    </div>
+                    <h3 class="font-heading text-2xl mb-3 text-white">Strong Branding</h3>
+                    <p class="text-sm text-gray-400 leading-relaxed">World-class visual identity and presentation comparable to premier global leagues.</p>
+                </div>
+                <div class="glass p-8 rounded-3xl">
+                    <div class="w-14 h-14 rounded-2xl bg-white/10 text-white flex items-center justify-center text-2xl mb-6">
+                        <i class="fa-solid fa-bullhorn"></i>
+                    </div>
+                    <h3 class="font-heading text-2xl mb-3 text-white">Targeted Marketing</h3>
+                    <p class="text-sm text-gray-400 leading-relaxed">Maximum reach and audience exposure across social channels and digital campaigns.</p>
+                </div>
+                <div class="glass p-8 rounded-3xl">
+                    <div class="w-14 h-14 rounded-2xl bg-white/10 text-white flex items-center justify-center text-2xl mb-6">
+                        <i class="fa-solid fa-video"></i>
+                    </div>
+                    <h3 class="font-heading text-2xl mb-3 text-white">Elite Media Coverage</h3>
+                    <p class="text-sm text-gray-400 leading-relaxed">Cinematic videography, professional photography, match summaries, and reels.</p>
+                </div>
+                <div class="glass p-8 rounded-3xl">
+                    <div class="w-14 h-14 rounded-2xl bg-white/10 text-white flex items-center justify-center text-2xl mb-6">
+                        <i class="fa-solid fa-gears"></i>
+                    </div>
+                    <h3 class="font-heading text-2xl mb-3 text-white">Professional Operations</h3>
+                    <p class="text-sm text-gray-400 leading-relaxed">Certified referees, medical aid, hydration stations, and organized team zones.</p>
+                </div>
+                <div class="glass p-8 rounded-3xl">
+                    <div class="w-14 h-14 rounded-2xl bg-white/10 text-white flex items-center justify-center text-2xl mb-6">
+                        <i class="fa-solid fa-trophy"></i>
+                    </div>
+                    <h3 class="font-heading text-2xl mb-3 text-white">Competitive Spirit</h3>
+                    <p class="text-sm text-gray-400 leading-relaxed">Providing the ideal platform for Karachi's top football talents to showcase skill.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="py-24 px-6 lg:px-12 max-w-5xl mx-auto text-center">
+        <span class="text-gray-400 text-xs font-bold tracking-widest uppercase block mb-3">Visuals</span>
+        <h2 class="font-title text-4xl sm:text-6xl uppercase tracking-wider mb-6">TOURNAMENT GALLERY</h2>
+        
+        <div class="glass p-12 rounded-3xl border border-white/10 max-w-2xl mx-auto">
+            <i class="fa-solid fa-camera-retro text-4xl text-gray-400 mb-4"></i>
+            <p class="font-heading text-xl sm:text-2xl text-white tracking-wider uppercase">
+                HIGHLIGHTS WOULD BE ADDED ONCE TOURNAMENT CONCLUDES, STAY TUNED!
+            </p>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="py-24 px-6 lg:px-12 max-w-4xl mx-auto">
+        <div class="text-center max-w-3xl mx-auto mb-16">
+            <span class="text-gray-400 text-xs font-bold tracking-widest uppercase block mb-3">Support</span>
+            <h2 class="font-title text-4xl sm:text-6xl uppercase tracking-wider mb-4">FREQUENTLY ASKED QUESTIONS</h2>
+            <p class="text-gray-400">Everything you need to know about participating in FST 2026.</p>
+        </div>
+
+        <div class="space-y-4">
+            <div class="glass rounded-2xl overflow-hidden border border-white/5">
+                <button onclick="toggleFaq(this)" class="w-full p-6 text-left font-semibold text-white flex items-center justify-between focus:outline-none">
+                    <span>How many players are allowed per team?</span>
+                    <i class="fa-solid fa-chevron-down text-white transition-transform duration-300"></i>
+                </button>
+                <div class="max-h-0 overflow-hidden transition-all duration-300 px-6 text-gray-400 text-sm">
+                    <p class="pb-6">Each squad can register up to 8 players (6 main players on the pitch + 2 substitutes).</p>
+                </div>
+            </div>
+            <div class="glass rounded-2xl overflow-hidden border border-white/5">
+                <button onclick="toggleFaq(this)" class="w-full p-6 text-left font-semibold text-white flex items-center justify-between focus:outline-none">
+                    <span>What is the tournament format?</span>
+                    <i class="fa-solid fa-chevron-down text-white transition-transform duration-300"></i>
+                </button>
+                <div class="max-h-0 overflow-hidden transition-all duration-300 px-6 text-gray-400 text-sm">
+                    <p class="pb-6">16 teams divided into 4 groups playing round-robin matches, followed by Quarter Finals, Semi Finals, and the Grand Final.</p>
+                </div>
+            </div>
+            <div class="glass rounded-2xl overflow-hidden border border-white/5">
+                <button onclick="toggleFaq(this)" class="w-full p-6 text-left font-semibold text-white flex items-center justify-between focus:outline-none">
+                    <span>Where is the venue located?</span>
+                    <i class="fa-solid fa-chevron-down text-white transition-transform duration-300"></i>
+                </button>
+                <div class="max-h-0 overflow-hidden transition-all duration-300 px-6 text-gray-400 text-sm">
+                    <p class="pb-6">W466+Q66, Block 10A Gulshan-e-Iqbal, Karachi, Pakistan.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact & Footer Section including Instagram QR Code & Official Logo -->
+    <footer id="contact" class="bg-darkgray/85 border-t border-white/10 pt-20 pb-12 px-6 lg:px-12">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12 mb-16 items-center">
+            
+            <div class="space-y-4">
+                <div class="flex items-center gap-3">
+                    <div class="w-12 h-10 rounded-lg overflow-hidden border border-white/20 bg-black flex items-center justify-center">
+                        <img src="https://images.unsplash.com/photo-1518091043644-c1d4457512c6?q=80&w=200&auto=format&fit=crop" alt="FST Official Logo" class="w-full h-full object-cover filter contrast-125">
+                    </div>
+                    <span class="font-heading text-xl tracking-wider">FANNY SPORTS</span>
+                </div>
+                <p class="text-sm text-gray-400">Karachi's premier 6v6 football tournament delivering unmatched competitive experiences.</p>
+                <p class="text-xs text-gray-400"><i class="fa-solid fa-location-dot text-white mr-2"></i> W466+Q66, Block 10A Gulshan-e-Iqbal, Karachi</p>
+            </div>
+
+            <!-- Instagram QR Code Display & Link to FST_KHI -->
+            <div class="glass p-6 rounded-3xl text-center border border-white/10 max-w-xs mx-auto w-full">
+                <span class="text-xs font-semibold uppercase tracking-widest text-gray-300 block mb-3">Scan or Click for Instagram</span>
+                <a href="https://instagram.com/FST_KHI" target="_blank" class="block group">
+                    <div class="bg-white p-3 rounded-2xl inline-block mb-3 shadow-lg group-hover:scale-105 transition-transform">
+                        <svg class="w-36 h-36 mx-auto" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="200" height="200" fill="#ffffff"/>
+                            <path d="M20 20h40v40H20zM140 20h40v40h-40zM20 140h40v40H20z" fill="#000000"/>
+                            <rect x="32" y="32" width="16" height="16" fill="#ffffff"/>
+                            <rect x="152" y="32" width="16" height="16" fill="#ffffff"/>
+                            <rect x="32" y="152" width="16" height="16" fill="#ffffff"/>
+                            <rect x="38" y="38" width="4" height="4" fill="#000000"/>
+                            <rect x="158" y="38" width="4" height="4" fill="#000000"/>
+                            <rect x="38" y="158" width="4" height="4" fill="#000000"/>
+                            <circle cx="80" cy="30" r="3" fill="#000"/><circle cx="95" cy="30" r="3" fill="#000"/><circle cx="110" cy="30" r="3" fill="#000"/><circle cx="125" cy="30" r="3" fill="#000"/>
+                            <circle cx="80" cy="45" r="3" fill="#000"/><circle cx="110" cy="45" r="3" fill="#000"/>
+                            <circle cx="80" cy="60" r="3" fill="#000"/><circle cx="95" cy="60" r="3" fill="#000"/><circle cx="125" cy="60" r="3" fill="#000"/>
+                            <circle cx="30" cy="80" r="3" fill="#000"/><circle cx="45" cy="80" r="3" fill="#000"/><circle cx="60" cy="80" r="3" fill="#000"/><circle cx="80" cy="80" r="3" fill="#000"/><circle cx="110" cy="80" r="3" fill="#000"/><circle cx="140" cy="80" r="3" fill="#000"/><circle cx="155" cy="80" r="3" fill="#000"/><circle cx="170" cy="80" r="3" fill="#000"/>
+                            <circle cx="30" cy="95" r="3" fill="#000"/><circle cx="60" cy="95" r="3" fill="#000"/><circle cx="95" cy="95" r="3" fill="#000"/><circle cx="125" cy="95" r="3" fill="#000"/><circle cx="155" cy="95" r="3" fill="#000"/>
+                            <circle cx="30" cy="110" r="3" fill="#000"/><circle cx="45" cy="110" r="3" fill="#000"/><circle cx="80" cy="110" r="3" fill="#000"/><circle cx="110" cy="110" r="3" fill="#000"/><circle cx="140" cy="110" r="3" fill="#000"/><circle cx="170" cy="110" r="3" fill="#000"/>
+                            <circle cx="80" cy="140" r="3" fill="#000"/><circle cx="95" cy="140" r="3" fill="#000"/><circle cx="110" cy="140" r="3" fill="#000"/><circle cx="125" cy="140" r="3" fill="#000"/>
+                            <circle cx="80" cy="170" r="3" fill="#000"/><circle cx="95" cy="170" r="3" fill="#000"/><circle cx="110" cy="170" r="3" fill="#000"/><circle cx="125" cy="170" r="3" fill="#000"/>
+                            <circle cx="140" cy="140" r="3" fill="#000"/><circle cx="170" cy="140" r="3" fill="#000"/>
+                            <circle cx="140" cy="170" r="3" fill="#000"/><circle cx="170" cy="170" r="3" fill="#000"/>
+                        </svg>
+                    </div>
+                    <span class="font-heading text-lg tracking-wider text-white hover:underline">@FST_KHI</span>
+                </a>
+            </div>
+
+            <div class="space-y-4">
+                <h4 class="font-heading text-lg tracking-wider text-white mb-2">DIRECT CONTACT</h4>
+                <p class="text-sm text-gray-300"><i class="fa-solid fa-phone text-white mr-2"></i> +92 329 2252425</p>
+                <p class="text-sm text-gray-300"><i class="fa-solid fa-envelope text-white mr-2"></i> fannysportstournament@gmail.com</p>
+                <div class="flex gap-4 pt-2">
+                    <a href="https://instagram.com/FST_KHI" target="_blank" class="w-10 h-10 rounded-full glass flex items-center justify-center text-white hover:bg-white hover:text-matte transition-all"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://wa.me/923292252425" target="_blank" class="w-10 h-10 rounded-full glass flex items-center justify-center text-white hover:bg-white hover:text-matte transition-all"><i class="fa-brands fa-whatsapp"></i></a>
+                    <a href="mailto:fannysportstournament@gmail.com" class="w-10 h-10 rounded-full glass flex items-center justify-center text-white hover:bg-white hover:text-matte transition-all"><i class="fa-regular fa-envelope"></i></a>
+                </div>
+            </div>
+
+        </div>
+        <div class="max-w-7xl mx-auto pt-8 border-t border-white/5 flex flex-col sm:flex-row items-center justify-between text-xs text-gray-500">
+            <p>&copy; 2026 Fanny Sports Tournament (FST). All rights reserved.</p>
+            <p class="mt-4 sm:mt-0">Designed for Elite Performance.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        window.addEventListener('load', () => {
+            const loader = document.getElementById('loader');
+            loader.style.opacity = '0';
+            setTimeout(() => loader.style.display = 'none', 700);
+        });
+
+        const glow = document.getElementById('cursor-glow');
+        window.addEventListener('mousemove', (e) => {
+            glow.style.left = e.clientX + 'px';
+            glow.style.top = e.clientY + 'px';
+        });
+
+        window.addEventListener('scroll', () => {
+            const winScroll = document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (winScroll / height) * 100;
+            document.getElementById('scroll-progress').style.width = scrolled + '%';
+
+            const navbar = document.getElementById('navbar');
+            if (winScroll > 50) {
+                navbar.classList.add('py-2');
+                navbar.classList.remove('py-3');
+            } else {
+                navbar.classList.add('py-3');
+                navbar.classList.remove('py-2');
+            }
+        });
+
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        menuBtn.addEventListener('click', () => {
+            if (mobileMenu.classList.contains('opacity-0')) {
+                mobileMenu.classList.remove('opacity-0', 'pointer-events-none');
+                menuBtn.innerHTML = '<i class="fa-solid fa-xmark"></i>';
+            } else {
+                mobileMenu.classList.add('opacity-0', 'pointer-events-none');
+                menuBtn.innerHTML = '<i class="fa-solid fa-bars"></i>';
+            }
+        });
+        document.querySelectorAll('.mobile-link').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('opacity-0', 'pointer-events-none');
+                menuBtn.innerHTML = '<i class="fa-solid fa-bars"></i>';
+            });
+        });
+
+        const targetDate = new Date('August 11, 2026 19:00:00').getTime();
+        function updateCountdown() {
+            const now = new Date().getTime();
+            const gap = targetDate - now;
+            const second = 1000, minute = second * 60, hour = minute * 60, day = hour * 24;
+
+            if (gap > 0) {
+                document.getElementById('days').innerText = String(Math.floor(gap / day)).padStart(2, '0');
+                document.getElementById('hours').innerText = String(Math.floor((gap % day) / hour)).padStart(2, '0');
+                document.getElementById('minutes').innerText = String(Math.floor((gap % hour) / minute)).padStart(2, '0');
+                document.getElementById('seconds').innerText = String(Math.floor((gap % minute) / second)).padStart(2, '0');
+            }
+        }
+        setInterval(updateCountdown, 1000);
+        updateCountdown();
+
+        const counters = document.querySelectorAll('.counter');
+        let animated = false;
+        window.addEventListener('scroll', () => {
+            if (counters.length > 0) {
+                const statsSection = counters[0].getBoundingClientRect();
+                if (statsSection.top < window.innerHeight && !animated) {
+                    counters.forEach(counter => {
+                        const target = +counter.getAttribute('data-target');
+                        let count = 0;
+                        const speed = target / 30;
+                        const updateCount = () => {
+                            count += speed;
+                            if (count < target) {
+                                counter.innerText = Math.ceil(count);
+                                setTimeout(updateCount, 40);
+                            } else {
+                                counter.innerText = target + (target === 130 || target === 32 ? '+' : '');
+                            }
+                        };
+                        updateCount();
+                    });
+                    animated = true;
+                }
+            }
+        });
+
+        function toggleFaq(btn) {
+            const content = btn.nextElementSibling;
+            if (content.style.maxHeight) {
+                content.style.maxHeight = null;
+                btn.querySelector('i').style.transform = 'rotate(0deg)';
+            } else {
+                content.style.maxHeight = content.scrollHeight + 'px';
+                btn.querySelector('i').style.transform = 'rotate(180deg)';
+            }
+        }
+    </script>
+</body>
+</html>
