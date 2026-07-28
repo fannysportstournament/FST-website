@@ -121,78 +121,66 @@
     </div>
 
     <!-- Sticky Navbar -->
-    <!-- Sticky Navbar -->
-<nav id="navbar" class="fixed top-0 left-0 right-0 z-40 transition-all duration-300 px-6">
+    <!-- Mobile Navbar -->
+<nav class="mobile-navbar">
     
-    <div class="flex items-center justify-between h-20">
+    <!-- Logo -->
+    <a href="#" class="mobile-logo">
+        <img src="images/fst-logo.png" alt="FST Logo">
+    </a>
 
-        <!-- Logo -->
-        <a href="#" class="flex items-center gap-3 group">
-            <div class="w-14 h-10 rounded-lg overflow-hidden border border-white/20 bg-black">
-                <img src="images/fst-logo.png"
-                     alt="FST Logo"
-                     class="w-full h-full object-contain rounded-xl">
-            </div>
+    <!-- Register Now -->
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLSdQxs3yBh8qJQpdLcuY2e_IfKC1_gbrE5eDjnKWKMcWYWgEdA/viewform?usp=dialog"
+       target="_blank"
+       class="mobile-register">
+        Register Now
+    </a>
 
-            <span class="font-heading text-lg tracking-wider hidden sm:inline">
-                FANNY SPORTS
-            </span>
-        </a>
-
-
-        <!-- Mobile Register Button -->
-        <a href="https://docs.google.com/forms/d/e/1FAIpQLSdQxs3yBh8qJQpdLcuY2e_IfKC1_gbrE5eDjnKWKMcWYWgEdA/viewform?usp=dialog"
-           target="_blank"
-           class="mobile-register-btn">
-            Register Now
-        </a>
-
-
-        <!-- Desktop Menu -->
-        <div class="hidden lg:flex items-center gap-8 text-sm font-medium text-gray-300">
-            <a href="#about">About</a>
-            <a href="#tournament">Tournament</a>
-            <a href="#schedule">Schedule</a>
-            <a href="#venue">Venue</a>
-            <a href="#gallery">Gallery</a>
-            <a href="#faq">FAQ</a>
-            <a href="#contact">Contact</a>
-
-            <a href="https://docs.google.com/forms/d/e/1FAIpQLSdQxs3yBh8qJQpdLcuY2e_IfKC1_gbrE5eDjnKWKMcWYWgEdA/viewform?usp=dialog"
-               target="_blank"
-               class="register-btn">
-                Register Now
-            </a>
-        </div>
-
-
-        <!-- Mobile Menu Button -->
-        <button class="lg:hidden text-white text-2xl">
-            ☰
-        </button>
-
-    </div>
+    <!-- Menu Button -->
+    <button class="mobile-menu-btn">
+        ☰
+    </button>
 
 </nav>
 
-
 <style>
-/* Mobile Register Button */
-.mobile-register-btn {
+.mobile-navbar {
     display: none;
 }
 
 @media (max-width: 1023px) {
-    .mobile-register-btn {
-        display: block;
-        background: white;
-        color: black;
-        padding: 8px 12px;
-        border-radius: 8px;
-        font-size: 12px;
-        font-weight: 700;
+
+    .mobile-navbar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        padding: 12px 20px;
+    }
+
+    .mobile-logo img {
+        width: 55px;
+        height: 40px;
+        object-fit: contain;
+    }
+
+    .mobile-register {
+        color: white;
         text-decoration: none;
+        font-size: 13px;
+        font-weight: 700;
         white-space: nowrap;
+        margin-left: auto;
+        margin-right: 15px;
+    }
+
+    .mobile-menu-btn {
+        background: none;
+        border: none;
+        color: white;
+        font-size: 26px;
+        cursor: pointer;
+        padding: 5px;
     }
 }
 </style>
