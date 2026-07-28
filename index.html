@@ -121,69 +121,15 @@
     </div>
 
     <!-- Sticky Navbar -->
-    <!-- Mobile Navbar -->
-<nav class="mobile-navbar">
-    
-    <!-- Logo -->
-    <a href="#" class="mobile-logo">
-        <img src="images/fst-logo.png" alt="FST Logo">
-    </a>
-
-    <!-- Register Now -->
-    <a href="https://docs.google.com/forms/d/e/1FAIpQLSdQxs3yBh8qJQpdLcuY2e_IfKC1_gbrE5eDjnKWKMcWYWgEdA/viewform?usp=dialog"
-       target="_blank"
-       class="mobile-register">
-        Register Now
-    </a>
-
-    <!-- Menu Button -->
-    <button class="mobile-menu-btn">
-        ☰
-    </button>
-
-</nav>
-
-<style>
-.mobile-navbar {
-    display: none;
-}
-
-@media (max-width: 1023px) {
-
-    .mobile-navbar {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        width: 100%;
-        padding: 12px 20px;
-    }
-
-    .mobile-logo img {
-        width: 55px;
-        height: 40px;
-        object-fit: contain;
-    }
-
-    .mobile-register {
-        color: white;
-        text-decoration: none;
-        font-size: 13px;
-        font-weight: 700;
-        white-space: nowrap;
-        margin-left: auto;
-        margin-right: 15px;
-    }
-
-    .mobile-menu-btn {
-        background: none;
-        border: none;
-        color: white;
-        font-size: 26px;
-        cursor: pointer;
-        padding: 5px;
-    }
-}
-</style>
+    <nav id="navbar" class="fixed top-0 left-0 right-0 z-40 transition-all duration-300 px-6 lg:px-12 py-3 flex items-center justify-between glass border-b border-white/5">
+        <a href="#" class="flex items-center gap-3 group">
+            <div class="w-14 h-10 rounded-lg overflow-hidden border border-white/20 bg-black flex items-center justify-center group-hover:scale-105 transition-transform shadow-md">
+<img
+    src="images/fst-logo.png"
+    alt="FST Logo"
+    class="w-full h-full object-contain rounded-xl">            </div>
+            <span class="font-heading text-lg tracking-wider hidden sm:inline">FANNY SPORTS</span>
+        </a>
 
         <div class="hidden lg:flex items-center gap-8 text-sm font-medium text-gray-300">
             <a href="#about" class="hover:text-white transition-colors">About</a>
