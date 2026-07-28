@@ -185,7 +185,7 @@
             </p>
 
             <div class="flex flex-wrap items-center justify-center gap-4 sm:gap-8 text-sm sm:text-base text-gray-300 glass px-6 py-3 rounded-2xl mb-10 border border-white/10">
-                <div class="flex items-center gap-2"><i class="fa-regular fa-calendar text-white"></i> 11–13 August 2026</div>
+                <div class="flex items-center gap-2"><i class="fa-regular fa-calendar text-white"></i> 14–16 August 2026</div>
                 <div class="hidden sm:inline text-white/20">|</div>
                 <div class="flex items-center gap-2"><i class="fa-regular fa-clock text-white"></i> 7:00 PM – 12:00 AM</div>
                 <div class="hidden sm:inline text-white/20">|</div>
@@ -313,7 +313,7 @@
         </div>
     </section>
 
-    <!-- Schedule / Timeline Section -->
+    <!-- Schedule / Timeline Section (Updated Dates: 14, 15, 16 August) -->
     <section id="schedule" class="py-24 px-6 lg:px-12 max-w-5xl mx-auto">
         <div class="text-center max-w-3xl mx-auto mb-16">
             <span class="text-gray-400 text-xs font-bold tracking-widest uppercase block mb-3">Blueprint</span>
@@ -325,7 +325,7 @@
             <div class="glass p-6 sm:p-8 rounded-3xl border-l-4 border-white">
                 <div class="flex flex-col sm:flex-row sm:items-center justify-between mb-6">
                     <h3 class="font-heading text-3xl text-white">DAY 1</h3>
-                    <span class="text-sm font-semibold text-gray-400">11 August 2026</span>
+                    <span class="text-sm font-semibold text-gray-400">14 August 2026</span>
                 </div>
                 <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
                     <div class="glass p-4 rounded-xl">
@@ -346,7 +346,7 @@
             <div class="glass p-6 sm:p-8 rounded-3xl border-l-4 border-white">
                 <div class="flex flex-col sm:flex-row sm:items-center justify-between mb-6">
                     <h3 class="font-heading text-3xl text-white">DAY 2</h3>
-                    <span class="text-sm font-semibold text-gray-400">12 August 2026</span>
+                    <span class="text-sm font-semibold text-gray-400">15 August 2026</span>
                 </div>
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div class="glass p-4 rounded-xl">
@@ -363,7 +363,7 @@
             <div class="glass p-6 sm:p-8 rounded-3xl border-l-4 border-white">
                 <div class="flex flex-col sm:flex-row sm:items-center justify-between mb-6">
                     <h3 class="font-heading text-3xl text-white">DAY 3</h3>
-                    <span class="text-sm font-semibold text-gray-400">13 August 2026</span>
+                    <span class="text-sm font-semibold text-gray-400">16 August 2026</span>
                 </div>
                 <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
                     <div class="glass p-4 rounded-xl">
@@ -642,7 +642,8 @@
             });
         });
 
-        const targetDate = new Date('August 11, 2026 19:00:00').getTime();
+        // Countdown target updated to August 14, 2026 19:00:00
+        const targetDate = new Date('August 14, 2026 19:00:00').getTime();
         function updateCountdown() {
             const now = new Date().getTime();
             const gap = targetDate - now;
