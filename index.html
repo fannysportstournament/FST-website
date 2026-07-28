@@ -156,9 +156,9 @@
     <div id="loader" class="fixed inset-0 z-50 bg-matte flex flex-col items-center justify-center transition-opacity duration-700">
         <div class="w-48 rounded-xl overflow-hidden border border-white/20 bg-black p-2 mb-6 shadow-2xl animate-pulse">
            <img
-    src="images/fst-logo.png"
-    alt="FST Logo"
-    class="w-full h-full object-contain rounded-xl">
+                src="images/fst-logo.png"
+                alt="FST Logo"
+                class="w-full h-full object-contain rounded-xl">
         </div>
         <h2 class="font-heading text-2xl tracking-widest text-white">FANNY SPORTS TOURNAMENT</h2>
         <p class="text-[10px] text-gray-400 mt-2 tracking-widest uppercase">Loading Official Experience...</p>
@@ -175,16 +175,17 @@
 
         <div class="hidden lg:flex items-center gap-8 text-sm font-medium text-gray-300">
             <a href="#about" class="hover:text-white transition-colors">About</a>
-            <a href="#groups" class="hover:text-white transition-colors">Groups</a>
-            <a href="#knockouts" class="hover:text-white transition-colors">Knockouts</a>
             <a href="#tournament" class="hover:text-white transition-colors">Tournament</a>
             <a href="#schedule" class="hover:text-white transition-colors">Schedule</a>
+            <a href="#groups" class="hover:text-white transition-colors">Groups</a>
+            <a href="#knockouts" class="hover:text-white transition-colors">Knockouts</a>
             <a href="#venue" class="hover:text-white transition-colors">Venue</a>
+            <a href="#why-fst" class="hover:text-white transition-colors">Excellence</a>
             <a href="#gallery" class="hover:text-white transition-colors">Gallery</a>
             <a href="#faq" class="hover:text-white transition-colors">FAQ</a>
             <a href="#contact" class="hover:text-white transition-colors">Contact</a>
             <a href="https://docs.google.com/forms/d/e/1FAIpQLSdQxs3yBh8qJQpdLcuY2e_IfKC1_gbrE5eDjnKWKMcWYWgEdA/viewform?usp=dialog" target="_blank">
-                <button class="register-btn">Register Now</button>
+                <button class="bg-white text-black px-4 py-2 rounded-lg font-bold hover:bg-gray-200 transition-all">Register Now</button>
             </a>
         </div>
 
@@ -202,11 +203,12 @@
     <!-- Mobile Menu Overlay -->
     <div id="mobile-menu" class="fixed inset-0 z-30 bg-matte/95 backdrop-blur-xl flex flex-col items-center justify-center gap-6 text-xl font-heading tracking-wider opacity-0 pointer-events-none transition-opacity duration-300 lg:hidden">
         <a href="#about" class="mobile-link hover:text-white">About</a>
-        <a href="#groups" class="mobile-link hover:text-white">Groups</a>
-        <a href="#knockouts" class="mobile-link hover:text-white">Knockouts</a>
         <a href="#tournament" class="mobile-link hover:text-white">Tournament</a>
         <a href="#schedule" class="mobile-link hover:text-white">Schedule</a>
+        <a href="#groups" class="mobile-link hover:text-white">Groups</a>
+        <a href="#knockouts" class="mobile-link hover:text-white">Knockouts</a>
         <a href="#venue" class="mobile-link hover:text-white">Venue</a>
+        <a href="#why-fst" class="mobile-link hover:text-white">Why FST</a>
         <a href="#gallery" class="mobile-link hover:text-white">Gallery</a>
         <a href="#faq" class="mobile-link hover:text-white">FAQ</a>
         <a href="#contact" class="mobile-link hover:text-white">Contact</a>
@@ -220,37 +222,12 @@
         </div>
     </div>
 
-    <style>
-    .mobile-register-container {
-        width: 100%;
-        display: flex;
-        justify-content: center;
-        margin: 20px 0;
-    }
-    .mobile-register-btn {
-        width: 85%;
-        max-width: 300px;
-        padding: 14px 20px;
-        background: #000;
-        color: #fff;
-        text-align: center;
-        text-decoration: none;
-        font-size: 16px;
-        font-weight: bold;
-        border-radius: 10px;
-        display: block;
-    }
-    .mobile-register-btn:active { transform: scale(0.98); }
-    </style>
-
     <!-- Hero Section -->
     <section class="relative min-h-screen flex items-center justify-center hero-bg px-6 pt-24 overflow-hidden">
         <div class="absolute top-1/4 left-10 w-72 h-72 bg-white/5 rounded-full blur-3xl pointer-events-none"></div>
         <div class="absolute bottom-10 right-10 w-96 h-96 bg-white/5 rounded-full blur-3xl pointer-events-none"></div>
 
         <div class="relative z-10 max-w-5xl mx-auto text-center flex flex-col items-center mt-6">
-            
-            <!-- REPLACED WITH YOUR EXACT FST GOALKEEPER/TROPHY LOGO ARTWORK -->
             <div class="relative mb-6 group max-w-2xl w-full px-4">
                 <div class="absolute -inset-4 bg-white/10 rounded-3xl blur-2xl opacity-40"></div>
                 <div class="relative rounded-2xl overflow-hidden glass border border-white/30 p-2 shadow-[0_0_80px_rgba(255,255,255,0.25)] bg-black">
@@ -309,10 +286,7 @@
             <div class="relative group">
                 <div class="absolute -inset-2 bg-white/10 rounded-3xl blur opacity-25 group-hover:opacity-50 transition duration-500"></div>
                 <div class="relative rounded-3xl overflow-hidden glass h-[400px] sm:h-[450px]">
-                    <img
-    src="images/fst-logo.png"
-    alt="FST Logo"
-    class="w-full h-full object-contain rounded-xl">
+                    <img src="images/fst-logo.png" alt="FST Logo" class="w-full h-full object-contain rounded-xl">
                 </div>
             </div>
             <div>
@@ -321,7 +295,7 @@
                     Where Karachi's Passion Meets <span class="text-white">Elite Competition</span>
                 </h2>
                 <p class="text-gray-300 text-base sm:text-lg leading-relaxed mb-6">
-                    Fanny Sports Tournament (FST) is a three-day competitive 6v6 football tournament that brings together passionate footballers from across Karachi. Built with the vision of creating an elite yet accessible football experience, FST combines competitive sport, professional event management, and community spirit. Whether you're stepping onto the pitch or cheering from the sidelines, FST is designed to celebrate the city's love for football.
+                    Fanny Sports Tournament (FST) is a three-day competitive 6v6 football tournament that brings together passionate footballers from across Karachi. Built with the vision of creating an elite yet accessible football experience, FST combines competitive sport, professional event management, and community spirit.
                 </p>
                 <div class="grid grid-cols-2 gap-6">
                     <div class="glass p-4 rounded-xl">
@@ -405,7 +379,7 @@
         </div>
     </section>
 
-    <!-- Schedule / Timeline Section -->
+    <!-- Schedule Section -->
     <section id="schedule" class="py-24 px-6 lg:px-12 max-w-5xl mx-auto">
         <div class="text-center max-w-3xl mx-auto mb-16">
             <span class="text-gray-400 text-xs font-bold tracking-widest uppercase block mb-3">Blueprint</span>
@@ -475,7 +449,7 @@
         </div>
     </section>
 
-    <!-- GROUPS & STANDINGS -->
+    <!-- GROUPS & STANDINGS (Moved after Schedule) -->
     <section id="groups" class="py-24 px-6 lg:px-12 max-w-7xl mx-auto scroll-mt-20">
         <div class="text-center mb-16">
             <span class="text-gray-400 text-xs font-bold tracking-widest uppercase block mb-3">Live Standings</span>
@@ -483,7 +457,6 @@
         </div>
 
         <div class="locked-section">
-            <!-- The Lock Overlay -->
             <div class="lock-overlay">
                 <div class="text-center glass p-8 sm:p-12 rounded-[2rem] border border-white/20 mx-4 shadow-2xl">
                     <i class="fa-solid fa-lock text-4xl mb-4 text-white/50"></i>
@@ -492,9 +465,7 @@
                 </div>
             </div>
 
-            <!-- Four Groups Grid -->
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <!-- Group A -->
                 <div class="glass p-6 rounded-3xl">
                     <h4 class="font-heading text-xl mb-4 border-b border-white/10 pb-2">GROUP A</h4>
                     <table class="standings-table">
@@ -509,7 +480,6 @@
                         </tbody>
                     </table>
                 </div>
-                <!-- Group B -->
                 <div class="glass p-6 rounded-3xl">
                     <h4 class="font-heading text-xl mb-4 border-b border-white/10 pb-2">GROUP B</h4>
                     <table class="standings-table">
@@ -524,7 +494,6 @@
                         </tbody>
                     </table>
                 </div>
-                <!-- Group C -->
                 <div class="glass p-6 rounded-3xl">
                     <h4 class="font-heading text-xl mb-4 border-b border-white/10 pb-2">GROUP C</h4>
                     <table class="standings-table">
@@ -539,7 +508,6 @@
                         </tbody>
                     </table>
                 </div>
-                <!-- Group D -->
                 <div class="glass p-6 rounded-3xl">
                     <h4 class="font-heading text-xl mb-4 border-b border-white/10 pb-2">GROUP D</h4>
                     <table class="standings-table">
@@ -558,7 +526,7 @@
         </div>
     </section>
 
-    <!-- KNOCKOUT ROADMAP -->
+    <!-- KNOCKOUT ROADMAP (Moved after Schedule) -->
     <section id="knockouts" class="py-24 px-6 lg:px-12 max-w-7xl mx-auto scroll-mt-20">
         <div class="text-center mb-16">
             <span class="text-gray-400 text-xs font-bold tracking-widest uppercase block mb-3">Road to Victory</span>
@@ -576,8 +544,6 @@
 
             <div class="overflow-x-auto pb-10">
                 <div class="min-w-[900px] flex justify-between items-center px-4">
-                    
-                    <!-- Quarter Finals -->
                     <div class="flex flex-col gap-8">
                         <p class="text-[10px] text-gray-500 font-bold uppercase text-center mb-2">Quarter Finals</p>
                         <div class="glass p-4 rounded-xl w-48 border-l-4 border-white/20">
@@ -598,7 +564,6 @@
                         </div>
                     </div>
 
-                    <!-- Semi Finals -->
                     <div class="flex flex-col gap-44">
                         <p class="text-[10px] text-gray-500 font-bold uppercase text-center mb-2">Semi Finals</p>
                         <div class="glass p-4 rounded-xl w-48 border-l-4 border-white/40">
@@ -611,7 +576,6 @@
                         </div>
                     </div>
 
-                    <!-- Grand Final -->
                     <div class="flex flex-col">
                         <p class="text-[10px] text-white font-bold uppercase text-center mb-4 tracking-[0.3em]">Grand Final</p>
                         <div class="glass p-10 rounded-[2.5rem] w-64 border-2 border-white/30 text-center relative shadow-[0_0_50px_rgba(255,255,255,0.1)]">
@@ -773,7 +737,7 @@
         </div>
     </section>
 
-    <!-- Footer Section -->
+    <!-- Footer Section including Instagram QR Code -->
     <footer id="contact" class="bg-darkgray/85 border-t border-white/10 pt-20 pb-12 px-6 lg:px-12">
         <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12 mb-16 items-center text-center md:text-left">
             
@@ -788,7 +752,7 @@
                 <p class="text-xs text-gray-400"><i class="fa-solid fa-location-dot text-white mr-2"></i> W466+Q66, Block 10A Gulshan-e-Iqbal, Karachi</p>
             </div>
 
-            <!-- Instagram QR Code Display -->
+            <!-- Instagram QR Code Display & Link to FST_KHI -->
             <div class="glass p-6 rounded-3xl text-center border border-white/10 max-w-xs mx-auto w-full">
                 <span class="text-xs font-semibold uppercase tracking-widest text-gray-300 block mb-3">Scan or Click for Instagram</span>
                 <a href="https://instagram.com/FST_KHI" target="_blank" class="block group">
