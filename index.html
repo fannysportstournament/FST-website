@@ -449,7 +449,7 @@
         </div>
     </section>
 
-    <!-- GROUPS & STANDINGS (Moved after Schedule) -->
+    <!-- GROUPS & STANDINGS -->
     <section id="groups" class="py-24 px-6 lg:px-12 max-w-7xl mx-auto scroll-mt-20">
         <div class="text-center mb-16">
             <span class="text-gray-400 text-xs font-bold tracking-widest uppercase block mb-3">Live Standings</span>
@@ -526,7 +526,7 @@
         </div>
     </section>
 
-    <!-- KNOCKOUT ROADMAP (Moved after Schedule) -->
+    <!-- KNOCKOUT ROADMAP -->
     <section id="knockouts" class="py-24 px-6 lg:px-12 max-w-7xl mx-auto scroll-mt-20">
         <div class="text-center mb-16">
             <span class="text-gray-400 text-xs font-bold tracking-widest uppercase block mb-3">Road to Victory</span>
@@ -737,7 +737,7 @@
         </div>
     </section>
 
-    <!-- Footer Section including Instagram QR Code -->
+    <!-- Footer Section -->
     <footer id="contact" class="bg-darkgray/85 border-t border-white/10 pt-20 pb-12 px-6 lg:px-12">
         <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12 mb-16 items-center text-center md:text-left">
             
@@ -800,7 +800,62 @@
         </div>
     </footer>
 
-    <!-- Scripts -->
+    <!-- ============================================================== -->
+    <!-- FST AI CONCIERGE FLOATING WIDGET (BOTTOM RIGHT MOBILE & DESKTOP) -->
+    <!-- ============================================================== -->
+    <div id="fst-ai-widget-wrapper" class="fixed bottom-5 right-5 z-50 flex flex-col items-end gap-3 font-sans">
+        
+        <!-- Chat Popup Modal Window -->
+        <div id="fst-ai-modal" class="w-[calc(100vw-2.5rem)] sm:w-[420px] h-[580px] max-h-[82vh] bg-[#0E0E0E] border border-white/20 rounded-3xl shadow-[0_20px_60px_rgba(0,0,0,0.8)] flex flex-col overflow-hidden transition-all duration-300 opacity-0 pointer-events-none scale-90 translate-y-6 origin-bottom-right">
+            
+            <!-- Chat Header -->
+            <div class="bg-[#141414] border-b border-white/10 px-4 py-3.5 flex items-center justify-between shrink-0">
+                <div class="flex items-center gap-3">
+                    <div class="w-8 h-8 rounded-xl bg-black border border-white/20 flex items-center justify-center overflow-hidden shrink-0 shadow-md">
+                     <img src="images/fst-logo.png" alt="FST Official Logo" class="w-full h-auto object-contain rounded-xl">
+
+                    </div>
+                    <div>
+                        <div class="flex items-center gap-2">
+                            <h3 class="text-xs font-bold tracking-wider uppercase text-white font-heading">FSTai CONCIERGE</h3>
+                            <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+                        </div>
+                        <p class="text-[10px] text-gray-400">AI Assistant</p>
+                    </div>
+                </div>
+                
+                <button id="fst-ai-close-btn" class="w-8 h-8 rounded-full bg-white/5 hover:bg-white/15 text-gray-300 hover:text-white flex items-center justify-center transition-colors">
+                    <i class="fa-solid fa-xmark text-sm"></i>
+                </button>
+            </div>
+
+            <!-- Chat iFrame Container with Correct Shared Public URL -->
+            <div class="flex-1 w-full bg-[#0B0B0B] relative">
+                
+        <div class="w-full h-full flex items-center justify-center bg-white">
+    <a
+        href="https://ais-pre-yyz3nndj3zbojnvejmnvdp-768226510713.asia-southeast1.run.app/?widgetMode=true"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="px-6 py-3 bg-black text-white rounded-lg font-semibold hover:bg-gray-800 transition"
+    >
+        Open FST AI Assistant
+    </a>
+</div>
+            </div>
+        </div>
+
+        <!-- Floating Bottom-Right Launcher Button -->
+        <button id="fst-ai-trigger-btn" class="group flex items-center gap-3 bg-gradient-to-r from-neutral-900 to-black hover:from-neutral-800 hover:to-neutral-900 text-white p-3 sm:px-5 sm:py-3.5 rounded-full border border-white/30 shadow-[0_10px_30px_rgba(0,0,0,0.5)] hover:border-white/60 transition-all duration-300 active:scale-95">
+            <div class="relative w-8 h-8 rounded-full bg-white text-black flex items-center justify-center shrink-0 shadow-md">
+                <i class="fa-solid fa-robot text-sm text-black"></i>
+                <span class="absolute -top-1 -right-1 w-3 h-3 bg-emerald-500 rounded-full border-2 border-black animate-pulse"></span>
+            </div>
+            <span class="font-heading tracking-wider text-sm hidden sm:inline uppercase text-white font-bold pr-1">Ask FSTai</span>
+        </button>
+    </div>
+
+    <!-- Website Scripts -->
     <script>
         window.addEventListener('load', () => {
             const loader = document.getElementById('loader');
@@ -900,6 +955,18 @@
                 btn.querySelector('i').style.transform = 'rotate(180deg)';
             }
         }
+
+        // FST AI CONCIERGE MODAL TOGGLE JS SCRIPT
+        const aiTriggerBtn = document.getElementById('fst-ai-trigger-btn');
+        const aiCloseBtn = document.getElementById('fst-ai-close-btn');
+        const aiModal = document.getElementById('fst-ai-modal');
+
+        aiTriggerBtn.addEventListener('click', () => {
+            window.open(
+                "https://ais-pre-yyz3nndj3zbojnvejmnvdp-768226510713.asia-southeast1.run.app/?widgetMode=true",
+                "_blank"
+            );
+        });
     </script>
 </body>
 </html>
