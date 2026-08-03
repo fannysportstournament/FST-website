@@ -329,7 +329,7 @@
             </div>
             <div class="glass p-6 rounded-2xl">
                 <span class="font-heading text-5xl sm:text-6xl text-white block mb-2 counter" data-target="32">32</span>
-                <span class="text-xs text-gray-400 uppercase tracking-widest font-semibold">Matches</span>
+                <span class="text-xs text-gray-400 uppercase tracking-widest font-semibold">Matches+</span>
             </div>
             <div class="glass p-6 rounded-2xl col-span-2 md:col-span-1">
                 <span class="font-heading text-5xl sm:text-6xl text-white block mb-2 counter" data-target="1">1</span>
@@ -591,102 +591,133 @@
     </section>
 
     <!-- Venue Section -->
-<section id="venue" class="py-24 px-6 lg:px-12 max-w-7xl mx-auto scroll-mt-20">
-    <div class="text-center max-w-3xl mx-auto mb-16">
-        <span class="text-gray-400 text-xs font-bold tracking-widest uppercase block mb-3">Location</span>
-        <h2 class="font-title text-4xl sm:text-6xl uppercase tracking-wider mb-4">The Arena X</h2>
-        <p class="text-gray-400">Official tournament destination grounds.</p>
+
+    <section id="venue" class="py-24 px-6 lg:px-12 max-w-7xl mx-auto">
+        <div class="text-center max-w-3xl mx-auto mb-16">
+            <span class="text-gray-400 text-xs font-bold tracking-widest uppercase block mb-3">Location</span>
+            <h2 class="font-title text-4xl sm:text-6xl uppercase tracking-wider mb-4">  The Arena X</h2>
+            <p class="text-gray-400">Official tournament destination grounds.</p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start"></div>
+
+            <div>
+                <p class="text-gray-300 mb-8 leading-relaxed text-lg">
+                    Located in Gulistan-e-Jauhar, Next to Chase Plus, our venue features high-grade artificial turf, professional floodlighting, spectator viewing areas, and secure team facilities.
+                </p>
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                    <div class="glass p-5 rounded-2xl text-center">
+                        <div class="w-10 h-10 rounded-xl bg-white/10 text-white flex items-center justify-center mx-auto mb-3">
+                            <i class="fa-solid fa-medal"></i>
+                        </div>
+                        <h4 class="font-semibold text-white text-sm">Elite Prizes</h4>
+                    </div>
+                    <div class="glass p-5 rounded-2xl text-center">
+                        <div class="w-10 h-10 rounded-xl bg-white/10 text-white flex items-center justify-center mx-auto mb-3">
+                            <i class="fa-solid fa-map-pin"></i>
+                        </div>
+                        <h4 class="font-semibold text-white text-sm">Prime Location</h4>
+                    </div>
+                    <div class="glass p-5 rounded-2xl text-center">
+                        <div class="w-10 h-10 rounded-xl bg-white/10 text-white flex items-center justify-center mx-auto mb-3">
+                            <i class="fa-solid fa-users"></i>
+                        </div>
+                        <h4 class="font-semibold text-white text-sm">Family-Friendly</h4>
+                    </div>
+                </div>
+            </div>
+            <div class="space-y-6">
+
+    <!-- Google Map -->
+    <div class="h-[300px] rounded-3xl overflow-hidden glass border border-white/10 relative">
+        <iframe
+    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3618.2545026120033!2d67.1150585!3d24.9233985!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3eb339007d667503%3A0x988ef6d758674eae!2sThe%20Arena%20X!5e0!3m2!1sen!2s!4v1785793115174!5m2!1sen!2s"
+    width="100%"
+    height="100%"
+    style="border:0; filter: grayscale(1) invert(1) contrast(1.2);"
+    allowfullscreen
+    loading="lazy"
+    referrerpolicy="strict-origin-when-cross-origin">
+</iframe>
     </div>
 
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
-        <!-- Left Column: Venue Info -->
-        <div>
-            <p class="text-gray-300 mb-8 leading-relaxed text-lg">
-                Located in Gulistan-e-Jauhar, Next to Chase Plus, our venue features high-grade artificial turf, professional floodlighting, spectator viewing areas, and secure team facilities.
-            </p>
-            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
-                <div class="glass p-5 rounded-2xl text-center">
-                    <div class="w-10 h-10 rounded-xl bg-white/10 text-white flex items-center justify-center mx-auto mb-3">
-                        <i class="fa-solid fa-medal"></i>
-                    </div>
-                    <h4 class="font-semibold text-white text-sm">Elite Prizes</h4>
-                </div>
-                <div class="glass p-5 rounded-2xl text-center">
-                    <div class="w-10 h-10 rounded-xl bg-white/10 text-white flex items-center justify-center mx-auto mb-3">
-                        <i class="fa-solid fa-map-pin"></i>
-                    </div>
-                    <h4 class="font-semibold text-white text-sm">Prime Location</h4>
-                </div>
-                <div class="glass p-5 rounded-2xl text-center">
-                    <div class="w-10 h-10 rounded-xl bg-white/10 text-white flex items-center justify-center mx-auto mb-3">
-                        <i class="fa-solid fa-users"></i>
-                    </div>
-                    <h4 class="font-semibold text-white text-sm">Family-Friendly</h4>
-                </div>
+    <!-- Venue Gallery -->
+
+    <div class="glass rounded-3xl border border-white/10 overflow-hidden">
+
+        <div class="flex items-center justify-between px-6 py-5 border-b border-white/10">
+            <div>
+                <p class="text-xs uppercase tracking-[0.3em] text-gray-500">
+                    Venue Gallery
+                </p>
+                <h3 class="text-white font-semibold text-xl">
+                    Explore The Arena
+                </h3>
+            </div>
+
+            <div class="flex gap-2">
+                <button id="venuePrev"
+                    class="w-10 h-10 rounded-full border border-white/10 hover:bg-white hover:text-black transition">
+                    <i class="fa-solid fa-chevron-left"></i>
+                </button>
+
+                <button id="venueNext"
+                    class="w-10 h-10 rounded-full border border-white/10 hover:bg-white hover:text-black transition">
+                    <i class="fa-solid fa-chevron-right"></i>
+                </button>
             </div>
         </div>
 
-        <!-- Right Column: Map & Gallery Slider -->
-        <div class="space-y-6">
-            <!-- Google Map -->
-            <div class="h-[300px] rounded-3xl overflow-hidden glass border border-white/10 relative">
-                <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3618.2545026120033!2d67.1150585!3d24.9233985!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3eb339007d667503%3A0x988ef6d758674eae!2sThe%20Arena%20X!5e0!3m2!1sen!2s!4v1785793115174!5m2!1sen!2s"
-                    width="100%"
-                    height="100%"
-                    style="border:0; filter: grayscale(1) invert(1) contrast(1.2);"
-                    allowfullscreen
-                    loading="lazy"
-                    referrerpolicy="strict-origin-when-cross-origin">
-                </iframe>
-            </div>
+        <div class="overflow-hidden">
+           <div id="venueSlider"
+    class="flex transition-transform duration-500 ease-in-out">
 
-            <!-- Venue Gallery Slider -->
-            <div class="glass rounded-3xl border border-white/10 overflow-hidden">
-                <div class="flex items-center justify-between px-6 py-5 border-b border-white/10">
-                    <div>
-                        <p class="text-xs uppercase tracking-[0.3em] text-gray-500">Venue Gallery</p>
-                        <h3 class="text-white font-semibold text-xl">Explore The Arena</h3>
-                    </div>
-
-                    <div class="flex gap-2">
-                        <button id="venuePrev" class="w-10 h-10 rounded-full border border-white/10 hover:bg-white hover:text-black transition flex items-center justify-center cursor-pointer">
-                            <i class="fa-solid fa-chevron-left"></i>
-                        </button>
-                        <button id="venueNext" class="w-10 h-10 rounded-full border border-white/10 hover:bg-white hover:text-black transition flex items-center justify-center cursor-pointer">
-                            <i class="fa-solid fa-chevron-right"></i>
-                        </button>
-                    </div>
-                </div>
-
-                <div class="overflow-hidden relative">
-                    <div id="venueSlider" class="flex transition-transform duration-500 ease-in-out">
-                        <div class="min-w-full w-full shrink-0">
-                            <img src="images/venue1.jpg" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1577223625816-7546f13df25d?q=80&w=1200&auto=format&fit=crop'" class="w-full h-[420px] object-cover bg-black" alt="High-Grade Artificial Turf">
-                        </div>
-                        <div class="min-w-full w-full shrink-0">
-                            <img src="images/venue2.jpg" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1551958219-acbc608c6377?q=80&w=1200&auto=format&fit=crop'" class="w-full h-[420px] object-cover bg-black" alt="Professional Floodlighting">
-                        </div>
-                        <div class="min-w-full w-full shrink-0">
-                            <img src="images/venue3.jpg" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1529900748604-07564a03e7a6?q=80&w=1200&auto=format&fit=crop'" class="w-full h-[420px] object-cover bg-black" alt="Spectator Gallery">
-                        </div>
-                        <div class="min-w-full w-full shrink-0">
-                            <img src="images/venue4.jpg" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1508098682722-e99c43a406b2?q=80&w=1200&auto=format&fit=crop'" class="w-full h-[420px] object-cover bg-black" alt="Team Facilities">
-                        </div>
-                        <div class="min-w-full w-full shrink-0">
-                            <img src="images/venue5.jpg" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1574629810360-7efbbe195018?q=80&w=1200&auto=format&fit=crop'" class="w-full h-[420px] object-cover bg-black" alt="Evening Match Atmosphere">
-                        </div>
-                        <div class="min-w-full w-full shrink-0">
-                            <img src="images/venue6.jpg" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1431324155629-1a6deb1dec8d?q=80&w=1200&auto=format&fit=crop'" class="w-full h-[420px] object-cover bg-black" alt="Floodlit Stadium View">
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+    <div class="min-w-full">
+        <img src="images/venue1.jpg"
+            class="w-full h-[420px] object-contain bg-black"
+            alt="Venue">
     </div>
-</section>
 
-    
+    <div class="min-w-full">
+        <img src="images/venue2.jpg"
+            class="w-full h-[420px] object-contain bg-black"
+            alt="Venue">
+    </div>
+
+    <div class="min-w-full">
+        <img src="images/venue3.jpg"
+            class="w-full h-[420px] object-contain bg-black"
+            alt="Venue">
+    </div>
+
+    <div class="min-w-full">
+        <img src="images/venue4.jpg"
+            class="w-full h-[420px] object-contain bg-black"
+            alt="Venue">
+    </div>
+
+    <div class="min-w-full">
+        <img src="images/venue5.jpg"
+            class="w-full h-[420px] object-contain bg-black"
+            alt="Venue">
+    </div>
+
+    <div class="min-w-full">
+        <img src="images/venue6.jpg"
+            class="w-full h-[420px] object-contain bg-black"
+            alt="Venue">
+    </div>
+
+
+</div>
+
+
+    </div>
+
+</div>
+        </div>
+    </section>
+
     <!-- Why Choose FST Section -->
     <section id="why-fst" class="py-24 bg-darkgray/40 border-y border-white/5">
         <div class="max-w-7xl mx-auto px-6 lg:px-12">
@@ -1026,52 +1057,45 @@
             );
         });
     </script>
+    <script>
+const slider = document.getElementById("venueSlider");
+const slides = slider.children;
 
-<script>
-document.addEventListener("DOMContentLoaded", () => {
+let current = 0;
 
-    const venueSlider = document.getElementById("venueSlider");
-    const venuePrev = document.getElementById("venuePrev");
-    const venueNext = document.getElementById("venueNext");
+function updateSlider() {
+    slider.style.transform = `translateX(-${current * slider.parentElement.clientWidth}px)`;
+}
 
-    if (!venueSlider || !venuePrev || !venueNext) return;
+document.getElementById("venueNext").addEventListener("click", () => {
+    current = (current + 1) % slides.length;
+    updateSlider();
+});
 
-    const slides = venueSlider.querySelectorAll(":scope > div");
-    let current = 0;
+document.getElementById("venuePrev").addEventListener("click", () => {
+    current = (current - 1 + slides.length) % slides.length;
+    updateSlider();
+});
 
-    function updateSlider() {
-        venueSlider.style.transform = `translateX(-${current * 100}%)`;
+// Swipe Support
+let startX = 0;
+
+slider.addEventListener("touchstart", e => {
+    startX = e.touches[0].clientX;
+});
+
+slider.addEventListener("touchend", e => {
+    let endX = e.changedTouches[0].clientX;
+
+    if(startX - endX > 50){
+        current = (current + 1) % slides.length;
     }
 
-    venueNext.addEventListener("click", () => {
-        current = (current + 1) % slides.length;
-        updateSlider();
-    });
-
-    venuePrev.addEventListener("click", () => {
+    if(endX - startX > 50){
         current = (current - 1 + slides.length) % slides.length;
-        updateSlider();
-    });
+    }
 
-    // Swipe
-    let startX = 0;
-
-    venueSlider.addEventListener("touchstart", (e) => {
-        startX = e.touches[0].clientX;
-    });
-
-    venueSlider.addEventListener("touchend", (e) => {
-        const diff = startX - e.changedTouches[0].clientX;
-
-        if (diff > 50) {
-            current = (current + 1) % slides.length;
-        } else if (diff < -50) {
-            current = (current - 1 + slides.length) % slides.length;
-        }
-
-        updateSlider();
-    });
-
+    updateSlider();
 });
 </script>
 
