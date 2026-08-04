@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FANNY SPORTS TOURNAMENT (FST) | Gulshan's Elite Showdown</title>
+    <title>FANNY SPORTS TOURNAMENT (FST) | Jauhar's Ultimate Showdown</title>
     
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -239,7 +239,7 @@
             </div>
 
             <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full glass border border-white/20 text-white text-xs font-semibold tracking-widest uppercase mb-4 animate-pulse">
-                <i class="fa-solid fa-circle text-[8px]"></i> Gulshan's Elite Showdown
+                <i class="fa-solid fa-circle text-[8px]"></i> Jauhar's Ultimate Showdown
             </div>
 
             <h1 class="font-title text-4xl sm:text-6xl lg:text-7xl tracking-tight leading-none mb-3 text-white uppercase drop-shadow-xl">
@@ -247,13 +247,13 @@
             </h1>
 
             <p class="text-xl sm:text-3xl text-gray-300 font-light tracking-wide mb-6 font-heading">
-                Karachi's Premier 6v6 Football Tournament
+                Karachi's 1st FST 5v5 Football Tournament
             </p>
 
             <div class="flex flex-wrap items-center justify-center gap-4 sm:gap-8 text-sm sm:text-base text-gray-300 glass px-6 py-3 rounded-2xl mb-10 border border-white/10">
                 <div class="flex items-center gap-2"><i class="fa-regular fa-calendar text-white"></i> 14–16 August 2026</div>
                 <div class="hidden sm:inline text-white/20">|</div>
-                <div class="flex items-center gap-2"><i class="fa-regular fa-clock text-white"></i> 7:00 PM – 12:00 AM</div>
+                <div class="flex items-center gap-2"><i class="fa-regular fa-clock text-white"></i> 6:00 PM – 12:00 AM</div>
                 <div class="hidden sm:inline text-white/20">|</div>
                 <div class="flex items-center gap-2"><i class="fa-solid fa-location-dot text-white"></i> Karachi</div>
             </div>
@@ -296,7 +296,7 @@
                     Where Karachi's Passion Meets <span class="text-white">Elite Competition</span>
                 </h2>
                 <p class="text-gray-300 text-base sm:text-lg leading-relaxed mb-6">
-                    Fanny Sports Tournament (FST) is a three-day competitive 6v6 football tournament that brings together passionate footballers from across Karachi. Built with the vision of creating an elite yet accessible football experience, FST combines competitive sport, professional event management, and community spirit.
+                    Fanny Sports Tournament (FST) is a three-day competitive 5v5 football tournament that brings together passionate footballers from across Karachi. Built with the vision of creating an elite yet accessible football experience, FST combines competitive sport, professional event management, and community spirit.
                 </p>
                 <div class="grid grid-cols-2 gap-6">
                     <div class="glass p-4 rounded-xl">
@@ -350,7 +350,7 @@
             <div class="glass-card p-6 rounded-2xl text-center">
                 <div class="w-12 h-12 rounded-xl bg-white/15 text-white flex items-center justify-center mx-auto mb-4 font-heading text-xl">01</div>
                 <h3 class="font-heading text-xl mb-2 text-white">16 Teams</h3>
-                <p class="text-xs text-gray-400">Elite 6v6 squads assembled from across Karachi.</p>
+                <p class="text-xs text-gray-400">Elite 5v5 squads assembled from across Karachi.</p>
             </div>
             <div class="glass-card p-6 rounded-2xl text-center">
                 <div class="w-12 h-12 rounded-xl bg-white/15 text-white flex items-center justify-center mx-auto mb-4 font-heading text-xl">02</div>
@@ -610,7 +610,7 @@
                         <div class="w-10 h-10 rounded-xl bg-white/10 text-white flex items-center justify-center mx-auto mb-3">
                             <i class="fa-solid fa-medal"></i>
                         </div>
-                        <h4 class="font-semibold text-white text-sm">Elite Prizes</h4>
+                        <h4 class="font-semibold text-white text-sm">Great Facilities</h4>
                     </div>
                     <div class="glass p-5 rounded-2xl text-center">
                         <div class="w-10 h-10 rounded-xl bg-white/10 text-white flex items-center justify-center mx-auto mb-3">
@@ -643,80 +643,37 @@
 
     <!-- Venue Gallery -->
 
-    <div class="glass rounded-3xl border border-white/10 overflow-hidden">
+    <div class="relative overflow-hidden rounded-[32px] border border-white/10 group">
 
-        <div class="flex items-center justify-between px-6 py-5 border-b border-white/10">
-            <div>
-                <p class="text-xs uppercase tracking-[0.3em] text-gray-500">
-                    Venue Gallery
-                </p>
-                <h3 class="text-white font-semibold text-xl">
-                    Explore The Arena
-                </h3>
-            </div>
+    <div class="absolute -inset-6 bg-white/5 blur-3xl -z-10"></div>
 
-            <div class="flex gap-2">
-                <button id="venuePrev"
-                    class="w-10 h-10 rounded-full border border-white/10 hover:bg-white hover:text-black transition">
-                    <i class="fa-solid fa-chevron-left"></i>
-                </button>
+    <video
+        autoplay
+        muted
+        loop
+        playsinline
+        preload="auto"
+        class="w-full h-[600px] object-cover opacity-90 hover:opacity-100 transition-all duration-[2500ms] group-hover:scale-105">
 
-                <button id="venueNext"
-                    class="w-10 h-10 rounded-full border border-white/10 hover:bg-white hover:text-black transition">
-                    <i class="fa-solid fa-chevron-right"></i>
-                </button>
-            </div>
-        </div>
+        <source src="videos/venue.mp4" type="video/mp4">
 
-        <div class="overflow-hidden">
-           <div id="venueSlider"
-    class="flex transition-transform duration-500 ease-in-out">
+    </video>
 
-    <div class="min-w-full">
-        <img src="images/venue1.jpg"
-            class="w-full h-[420px] object-contain bg-black"
-            alt="Venue">
-    </div>
+    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
 
-    <div class="min-w-full">
-        <img src="images/venue2.jpg"
-            class="w-full h-[420px] object-contain bg-black"
-            alt="Venue">
-    </div>
+    <div class="absolute bottom-8 left-8">
 
-    <div class="min-w-full">
-        <img src="images/venue3.jpg"
-            class="w-full h-[420px] object-contain bg-black"
-            alt="Venue">
-    </div>
+        <p class="uppercase tracking-[0.4em] text-xs text-gray-300">
+            Official Venue
+        </p>
 
-    <div class="min-w-full">
-        <img src="images/venue4.jpg"
-            class="w-full h-[420px] object-contain bg-black"
-            alt="Venue">
-    </div>
-
-    <div class="min-w-full">
-        <img src="images/venue5.jpg"
-            class="w-full h-[420px] object-contain bg-black"
-            alt="Venue">
-    </div>
-
-    <div class="min-w-full">
-        <img src="images/venue6.jpg"
-            class="w-full h-[420px] object-contain bg-black"
-            alt="Venue">
-    </div>
-
-
-</div>
-
+        <h2 class="text-4xl font-bold mt-2">
+            The Arena X
+        </h2>
 
     </div>
 
 </div>
-        </div>
-    </section>
 
     <!-- Why Choose FST Section -->
     <section id="why-fst" class="py-24 bg-darkgray/40 border-y border-white/5">
@@ -820,7 +777,7 @@
                     <i class="fa-solid fa-chevron-down text-white transition-transform duration-300"></i>
                 </button>
                 <div class="max-h-0 overflow-hidden transition-all duration-300 px-6 text-gray-400 text-sm">
-                    <p class="pb-6">W466+Q66, Block 10A Gulshan-e-Iqbal, Karachi, Pakistan.</p>
+                    <p class="pb-6">"Plot ST-1A, 16 block, opposite Continental Bakery, Block 16 Gulistan-e-Johar, Karachi, 75290, Pakistan"</p>
                 </div>
             </div>
         </div>
@@ -837,8 +794,8 @@
                     </div>
                     <span class="font-heading text-xl tracking-wider">FANNY SPORTS</span>
                 </div>
-                <p class="text-sm text-gray-400">Karachi's premier 6v6 football tournament delivering unmatched competitive experiences.</p>
-                <p class="text-xs text-gray-400"><i class="fa-solid fa-location-dot text-white mr-2"></i> W466+Q66, Block 10A Gulshan-e-Iqbal, Karachi</p>
+                <p class="text-sm text-gray-400">Karachi's premier 5v5 football tournament delivering unmatched competitive experiences.</p>
+                <p class="text-xs text-gray-400"><i class="fa-solid fa-location-dot text-white mr-2"></i> Plot ST-1A, 16 block, opposite Continental Bakery, Block 16 Gulistan-e-Johar, Karachi, 75290, Pakistan</p>
             </div>
 
             <!-- Instagram QR Code Display & Link to FST_KHI -->
